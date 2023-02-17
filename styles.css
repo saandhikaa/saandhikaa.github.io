@@ -1,0 +1,291 @@
+body{
+  margin: 0;
+  padding: 50px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+H2, H3{
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  gap: 60px;
+  
+  grid-template: 
+    [H1]'Area1 Area2' min-content
+    [H2]'Footer Footer' min-content
+    [H3]/[V1] 2fr [V2] 5fr [V3];
+}
+
+.profile{
+  grid-area: Area1;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.profile .photo{
+  position: relative;
+}
+
+.profile .photo span{
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.profile .photo .LT{
+  left: 0;
+  height: 0;
+  width: 0;
+  border-top: 40px solid transparent;
+}
+
+.profile .photo .RT{
+  right: 0;
+  height: 0;
+  width: 0;
+  border-top: 40px solid transparent;
+}
+
+.profile .photo #myphoto{
+  width: 100%;
+}
+
+.profile .info p{
+  font-weight: 600;
+  color: #37BC9B;
+  padding-top: 5px;
+  margin: 0;
+}
+
+.profile .info h2{
+  font-family: 'Work Sans', sans-serif;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.profile .info h3{
+  margin-bottom: 10px;
+}
+
+.account{
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 0;
+}
+
+.account a{
+  color: black;
+  margin-right: 10px;
+}
+
+.account i{
+  font-size: 40px;
+}
+
+.a-github:visited, .a-github:hover{
+  color: #181717;
+  transition: .3s;
+}
+.a-linkedin:visited, .a-linkedin:hover{
+  color: #0077B5;
+  transition: .3s;
+}
+.a-instagram:visited, .a-instagram:hover{
+  color: #833AB4;
+  transition: .3s;
+}
+.a-twitter:visited, .a-twitter:hover{
+  color: #1DA1F2;
+  transition: .3s;
+}
+
+
+
+.repositories{
+  grid-area: Area2;
+  width: 100%;
+}
+
+.project{
+  padding: 30px;
+  background-color: #CBE7E3;
+  border-radius: 30px;
+  margin-bottom: 40px;
+}
+
+.repositories h2{
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.project p{
+  margin-top: 20px;
+}
+
+.project .date{
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.project .material{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 20px 0 10px 0;
+  width: 100%;
+}
+
+.project .material a{
+  margin: 5px 3px 5px 0;
+}
+  
+.project .material button{
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  background-color: #37BC9B;
+  color: white;
+  border-radius: 15px;
+  border: 3px solid transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.project .material button:hover{
+  border: 3px solid #48CFAD;
+  transition: .4s;
+}
+
+.project .link{
+  width: fit-content;
+  margin: 25px 0 40px 0;
+}
+
+.project .link button{
+  margin-bottom: 10px;
+  display: flex;
+  height: 32px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.project .link .button-text{
+  font-size: 18px;
+  font-style: italic;
+}
+
+.project .link button span{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.fa-git-alt{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  width: 40px;
+}
+.fa-arrow-up-right-from-square{
+  display: flex;
+  justify-content: center;
+  font-size: 23px;
+  width: 40px;
+}
+
+#scrollUpButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  opacity: 70%;
+}
+
+#scrollUpButton:hover {
+  background-color: #333;
+}
+
+@media (max-width: 767px){
+  body{
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .container{
+    gap: 20px;
+    
+    grid-template:
+      [H1]'Area1' min-content
+      [H2]'Area2' min-content
+      [H3]'Footer' min-content
+      [H4]/[V1] 100% [V2];
+  }
+  
+  .repositories{
+    position: relative;
+    padding: 20px;
+    left: -20px;
+    width: 100%;
+  }
+  
+  .repositories h2{
+    margin-left: 0;
+  }
+  
+  .project{
+    position: relative;
+    left: -20px;
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .project.animate {
+    opacity: 1;
+  }
+
+  .project:nth-of-type(odd){
+    background-color: #CBE7E3;
+  }
+  .project:nth-of-type(even){
+    background-color: white;
+  }
+  
+  #scrollUpButton{
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+  }
+}
