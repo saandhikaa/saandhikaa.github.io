@@ -2,7 +2,6 @@ var myphotoheight = document.getElementById("myphoto").height;
 document.getElementById("photo").style.height = myphotoheight + "px";
 
 
-
 var myphotowidth = document.getElementById("myphoto").width;
 document.getElementById("Ltriangle").style.borderLeft = myphotowidth/2 + "px solid white";
 document.getElementById("Rtriangle").style.borderRight = myphotowidth/2 + "px solid white";

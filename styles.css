@@ -32,6 +32,9 @@ a{
 
 .profile .photo{
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile .photo span{
@@ -59,6 +62,13 @@ a{
 
 .profile .photo #myphoto{
   width: 100%;
+}
+
+.profile .photo #sample{
+  color: white;
+  font-size: 30px;
+  font-family: 'Rubik', sans-serif;
+  position: absolute;
 }
 
 .profile .info p{
@@ -186,6 +196,10 @@ a{
   cursor: pointer;
 }
 
+.project .link button:hover{
+  color: #37BC9B;
+}
+
 .project .link .button-text{
   font-size: 18px;
   font-style: italic;
@@ -247,6 +261,10 @@ a{
       [H2]'Area2' min-content
       [H3]'Footer' min-content
       [H4]/[V1] 100% [V2];
+  }
+  
+  .profile .photo #sample{
+    font-size: 50px;
   }
   
   .repositories{
